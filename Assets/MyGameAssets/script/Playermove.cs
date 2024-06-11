@@ -58,10 +58,9 @@ public class Playermove : MonoBehaviour
 
         }
         //スペースキーでジャンプ
-        // Dキー（右移動）
         if (Input.GetKey(KeyCode.Space)&& Positioncontrolflg == true)
         {
-            rb.velocity = -transform.up *30f;
+            rb.velocity = -transform.up *20f;
         }
         // Dキー（右移動）
         if (Input.GetKey(KeyCode.D))
