@@ -11,17 +11,31 @@ public class MoveObjectW : MonoBehaviour
     void Start()
     {
         _initialPosition = gameObject.transform.position;
+        Debug.Log(_initialPosition.x + "   x    ");
+        if (_initialPosition.x<=3)
+        {
+            _isMoving = true;
+        }
+        else
+        {
+            _isMoving = false;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {    var velocity = Vector3.zero;
-        velocity.x -= _speed;
-        if (velocity.x - _initialPosition.x <= -3)
+       
+        if (gameObject.transform.position.x <= -1)
         {
             gameObject.transform.position = _initialPosition; // ˆÊ’u‚Ì‰Šú‰»
-
+            Debug.Log(_initialPosition.x + "   x    ");
         }
+        else
+        {
+            velocity.x -= _speed;
+        }
+
         transform.position += transform.rotation * velocity;
     }
 }
