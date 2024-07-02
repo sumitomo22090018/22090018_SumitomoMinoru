@@ -26,7 +26,12 @@ public class MoveObjectW : MonoBehaviour
     void Update()
     {    var velocity = Vector3.zero;
        
-        if (gameObject.transform.position.x <= -1)
+        if (gameObject.transform.position.x <= -1&&_isMoving==false)
+        {
+            gameObject.transform.position = _initialPosition; // à íuÇÃèâä˙âª
+            Debug.Log(_initialPosition.x + "   x    ");
+        }
+        else if (gameObject.transform.position.x >= -1 && _isMoving == true)
         {
             gameObject.transform.position = _initialPosition; // à íuÇÃèâä˙âª
             Debug.Log(_initialPosition.x + "   x    ");
